@@ -8,7 +8,7 @@ public class ReentrantLockTest implements Runnable{
 
     private static int count=0;
 
-    public static void main(String []args)throws InterruptedException{
+    public static void main(String []args) throws InterruptedException{
         ReentrantLockTest test=new ReentrantLockTest();
         Thread t1= new Thread(test);
         Thread t2= new Thread(test);
