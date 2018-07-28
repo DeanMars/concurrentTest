@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class ThreadLocalTest {
 
-    public static final SimpleDateFormat sft=new SimpleDateFormat("yyyy-MM-dd:HH:mm:ss");
+
 
     public static ThreadLocal<SimpleDateFormat> threadLocal=new ThreadLocal<>();
 
@@ -26,8 +26,8 @@ public class ThreadLocalTest {
                 SimpleDateFormat simpleDateFormat = threadLocal.get();
                 if (simpleDateFormat == null) {
                     System.out.println("init sft:" + name);
-                    simpleDateFormat = sft;
-                    threadLocal.set(sft);
+                    simpleDateFormat= new SimpleDateFormat("yyyy-MM-dd:HH:mm:ss");
+                    threadLocal.set(simpleDateFormat);
                 }
                 System.out.println(name + ":" + simpleDateFormat.format(new Date()));
                 i++;
